@@ -33,3 +33,5 @@ Key
 /frontend/.firebasesrc
 
 /backend/server/firestore.js
+
+/backend/server/server.js
