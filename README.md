@@ -1,189 +1,58 @@
-# Hello World 
-1. [Software Overview](#software-overview)
-2. [Requirements and Prerequisites](#requirements-and-prerequisites)
-   1. [Compatible Operating Systems](#compatible-operating-systems)
-   2. [Supported Web Browsers](#supported-web-browsers)
-   3. [System Requirements](#system-requirements)
-   4. [Library Requirements](#library-requirements)
-      1. [Frontend](#frontend)
-      2. [Backend](#backend)
-   5. [Key Requirements](#key-requirements)
-      1. [Firebase Key](#firebase-key)
-      2. [Amadeus API Key](#amadeus-api-key)
-3. [Installation and Development](#installation-and-development)
-   1. [Development](#development)
-4. [Design Diagrams](#design-diagrams)
-   1. [High Level Systems Diagram](#high-level-systems-diagram)
-   2. [Use Case Diagram](#use-case-diagram)
-   3. [Frontend Webpages](#frontend-webpages)
----
-## Preview
+# HelloWorld
 
-![Home Screen Screenshot](https://github.com/tvay11/HelloWorld/blob/main/screenshot/HomeScreenSS.png)
+A clean, minimal JavaScript project demonstrating foundational programming concepts and best practices in software development.
 
-![Image Slider](https://github.com/tvay11/HelloWorld/blob/main/screenshot/GifImageSlider.gif)
+## Project Overview
 
-## Software Overview
+HelloWorld is a personal portfolio project designed to showcase core JavaScript programming skills, code organization, and software engineering principles. While the project begins as a simple introductory application, it serves as a foundation for demonstrating clean code structure, modular design, and the ability to build scalable, maintainable software. This project is intended to highlight a developer's approach to problem-solving, code readability, and technical communication.
 
-HelloWorld is a web application that retrieves the cheapest flight option based on users’ desired flight characteristics. The current supported list of flight characteristics include:
-- origin and destination 
-- one-way vs. round-trip
-- number of travelers
-- cabin class
-- departure date and return date. 
+## Core Features
 
-\* Our software allows users to enter multiple origin locations and destination locations. Our software provides users the option to bundle various groups together in a **preset** and tie those customized presets to their account. <div id='highlight-feature'/> 
+- Clean, well-documented JavaScript codebase with a focus on readability and maintainability
+- Modular architecture that separates concerns and promotes code reuse
+- Simple, intuitive interface for demonstrating core programming logic
+- Extensible structure designed to accommodate future feature additions
+- Adherence to modern JavaScript best practices and coding standards
+- Version-controlled development with clear commit history and documentation
 
-Search feature allows users to toggle various origin and destination locations manually, or autofill the flight search interface with the locations presets tied to their account for ease of use. Based on the information the user provides, our software makes calls to the Amadeus Flight API and sorts the flights returned. We sort from lowest to highest price per flight duration. Each itinerary results reflects the users' inputs in the optimal sorting order (metrics is price/flight duration). The current supported list of each itinerary result include:
-- total travel time
-- layover information (duration, time stamps)
-- airline carriers
+## Technology Stack
 
-With our software, users are able to sift through results returned to them and see flight numbers for each flight to allow them to lookup that flight on a flight purchasing website at ease. 
+- **JavaScript**: Chosen as the primary language for its versatility, widespread adoption, and suitability for both frontend and backend development. JavaScript enables rapid prototyping and is essential for modern web development, making it an ideal choice for demonstrating foundational programming skills.
 
----
+## Architecture and Design Decisions
 
-## Requirements and Prerequisites
+The codebase follows a modular design pattern to ensure separation of concerns and ease of maintenance. Key architectural decisions include:
 
-### Compatible Operating Systems
-Most modern operating systems (Windows, MacOS, Linux, etc.) with web browser
+- **Modular Structure**: Functions and logic are organized into discrete modules, each responsible for a specific aspect of the application. This approach simplifies testing, debugging, and future enhancements.
+- **Single Responsibility Principle**: Each module and function is designed to perform one clear task, reducing complexity and improving code clarity.
+- **Consistent Naming Conventions**: Variables, functions, and files follow descriptive, consistent naming patterns to enhance readability and self-documentation.
+- **Minimal Dependencies**: The project avoids unnecessary external libraries to keep the codebase lightweight and focused on core JavaScript skills.
 
-### Supported Web Browsers
-All modern browsers (Edge, Firefox, Chrome, Safari, etc.)
+## Installation and Setup
 
-### System Requirements
-- Server environment: [Node.js](https://nodejs.org/en/download)
-- Package manager: `npm` (preferred and included when you install Node)
-- Version control: [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+To run this project locally, ensure you have a modern web browser and a text editor installed. No additional dependencies are required.
 
-### Library Requirements
-All dependencies with their versions are listed in the metadata/configuration files in our project (backend dependencies [here](/backend/server/package.json), frontend dependencies [here](/frontend/package.json)). Important requirements are listed below:
-#### Frontend
-- [Material UI](https://www.npmjs.com/package/@mui/material)
-- [React](<https://www.npmjs.com/package/react>)
-- [React Router DOM](<https://www.npmjs.com/package/react-router-dom>)
-- [Firebase](<https://www.npmjs.com/package/firebase>)
-- [Dayjs](<https://www.npmjs.com/package/dayjs>)
-#### Backend
-- [Amadeus](<https://www.npmjs.com/package/amadeus>)
-- [Express](<https://www.npmjs.com/package/express>)
-- [GraphQL](<https://www.npmjs.com/package/graphql>)
-- [Firebase SDK for Cloud Functions](https://www.npmjs.com/package/firebase-functions)
+1. Clone the repository:
+   ```
+   git clone https://github.com/tvay11/HelloWorld.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd HelloWorld
+   ```
+3. Open the main JavaScript file in your preferred code editor to review the code.
+4. To execute the JavaScript code, open the project's HTML file (if applicable) in a web browser, or run the script using Node.js:
+   ```
+   node index.js
+   ```
 
-### Key Requirements
+## Future Scope and Key Learnings
 
-To ensure the proper functionality of this project, you must configure the following keys:
+This project serves as a starting point for exploring more advanced JavaScript concepts and software engineering practices. Key learnings from this project include the importance of clean code structure, the value of modular design, and the discipline of maintaining clear documentation. Future expansions could include:
 
-#### Firebase Key
+- Adding unit tests to ensure code reliability and facilitate continuous integration
+- Implementing a simple user interface to demonstrate interactive functionality
+- Integrating with external APIs or data sources to showcase asynchronous programming
+- Expanding the project into a full-featured application with multiple modules and services
 
-For Firestore and Firebase Authentication, you need to set up your Firebase project and obtain your unique Firebase key. Follow these steps:
-
-1. Go to the [Firebase Console](https://console.firebase.google.com/).
-2. Create a new project or select an existing one.
-3. Navigate to the project settings and find your Web API Key.
-4. Place this key in your frontend/Firebase folder.
-
-#### Amadeus API Key
-
-This project uses the Amadeus API to search for flights. You will need to obtain your API key by following these steps:
-
-1. Sign up for an account at [Amadeus for Developers](https://developers.amadeus.com/).
-2. Create a new application within your dashboard to receive your API credentials.
-3. You'll receive an API Key and API Secret—both of which you'll need to use the Amadeus services.
-4. Add the API Key and Secret to your backend/Amadeus folder.
-
-
----
-## Installation and Development
-### Development
-First, ensure your [operating system](#compatible-operating-systems), and [web browser](#supported-web-browsers) requirements are met.
-
-Second, install `Node.js` and `npm` with [the appropriate installer](https://nodejs.org/en/download) to your OS. *Development of this project is done using Node v18.14.1 and npm v9.3.1*
-
-Third, navigate to your directory of choice. Clone the repo and navigate there with 
-``` bash
-git clone https://github.com/tvay11/helloworld.git && cd helloworld
-```
-
-Within the `helloworld` directory, navigate to the frontend folder and install its dependencies locally [^install]
-```bash
-cd frontend && npm install
-```
-Return to project root in `helloworld` and navigate to backend folder and install its dependencies locally [^install]
-```bash
-cd ../backend/server/ && npm install
-```
-[^install]: *It is recommended to install dependencies locally to avoid version incompatibility with your other projects.*
-
-### Preferred Way to Compile
-Once within `HelloWorld` folder...
-- To run frontend, `cd frontend` and then run `npm start`
-- To run backend server, `cd backend/server` and then run `npm run dev`
-
----
-
-## Design Diagram  <div id='design'/>
-### High Level Systems Diagram (View in Light Mode)
-```mermaid
-   %%{ init : { "theme" : "forest"}}%%
-   graph LR;
-   Frontend & DB[(Firestore)] & API--> Server[Server];
-   Server--> Frontend & DB & API;
-    Firebase[(Firebase auth )] --> DB;
-    DB --> Firebase;
-```
-
-
-### Use Case Diagram
-```mermaid
-   %%{ init : { "theme" : "forest", "graph" : { "curve" : "linear" }}}%%
-   graph TD
-   u{User} --takes action--> FlightSearch & Signup & Login & SaveFlightInfo
-  
-   FlightSearch --searches flights---> Server(NodeJS Server)
-   Server --retrieves info---> API(Amadeus API)
-   subgraph flight search
-   FlightSearch
-   API
-   end
-
-
-   SaveFlightInfo --saves flight info ---> Server --retrieves info ---> DB[(Firestore)]
-   subgraph save
-   SaveFlightInfo
-   DB
-   end
-  
-   Signup --creates a login ---> Server --authenticates user ---> FB[(Firebase)]
-  
-   subgraph authentication
-subgraph signup
-   Signup
-   end
-   subgraph login
-   Login
-   end
-   FB
-   end
-
-
-   Login --sends a login request ---> Server
-  
-   Server --returns info ----> UI(User Interface)
-  
-```
-
-### Frontend Webpages
-```mermaid
-   %%{ init : { "theme" : "forest", "graph" : { "curve" : "linear" }}}%%
-   graph TD
-   Homepage --create account--> Creation(Account Creation Page)
-   Homepage --login to account--> Login(Account Login Page)
-   Creation -- login to newly created account --> Login
-   Homepage -- enter desired flight info --> Results(Results Entries)
-  
-```
----
-
-
-
+This project reflects a commitment to writing professional, maintainable code and a willingness to build upon foundational skills for more complex challenges.
